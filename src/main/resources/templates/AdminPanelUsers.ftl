@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Rock | Paper | Sizer Statistics</title>
+  <title>Admin Panel Users</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -20,8 +20,8 @@
 
 <!-- Start your project here-->
 <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
-  <a class="navbar-brand" href="/home">JavaGameApp</a>
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark primary-color">
+  <a class="navbar-brand" href="/admin">Admin Panel</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
           aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -30,13 +30,10 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-          <a class="nav-link" href="/home">Home</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="/RockPaperSizerGame">RockPaperSizerGame</a>
+          <a class="nav-link" href="/admin">Home</a>
       </li>
       <li class="nav-item active">
-          <a class="nav-link" href="/RockPaperSizerStatistics">Statistics
+          <a class="nav-link" href="/AdminPanelUsers">Users
             <span class="sr-only">(current)</span>
           </a>
       </li>
@@ -69,7 +66,7 @@
 <!--/.Navbar -->
 
 <!-- main -->
-<div class="container" style="height: 70.9vh;">
+<div class="container" style="height: 88.3vh;">
     <div class="row">
         <div class="col-md-12 d-flex justify-content-end">
             <!-- Search -->
@@ -84,28 +81,30 @@
         <div class="col-md-12">
             <div class="z-depth-2">
                 <table class="table table-striped mb-0">
-                  <thead class="default-color white-text">
+                  <thead class="primary-color white-text">
                     <tr>
                       <th scope="col">ID</th>
                       <th scope="col">Name</th>
-                      <th scope="col">PlayedGame</th>
-                      <th scope="col">Win</th>
-                      <th scope="col">Lost</th>
-                      <th scope="col">Draw</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Password</th>
+                      <th scope="col">IsAdmin</th>
+                      <th scope="col">Edit</th>
+                      <th scope="col">Delete</th>
                     </tr>
                   </thead>
                 </table>
                 <div class="table-wrapper-scroll-y my-custom-scrollbar">
                   <table class="table table-striped mb-0">
                       <tbody id="myTable">
-                        <#list allStatistics as statistic>
+                        <#list allUsers as user>
                         <tr>
-                          <th scope="row">${statistic.getUser().getId()}</th>
-                          <th scope="col">${statistic.getUser().getName()}</th>
-                          <th scope="col">${statistic.getCountPlayGame()}</th>
-                          <th scope="col">${statistic.getCountWin()}</th>
-                          <th scope="col">${statistic.getCountLost()}</th>
-                          <th scope="col">${statistic.getCountDraw()}</th>
+                          <th scope="row">${user.getId()}</th>
+                          <th scope="col">${user.getName()}</th>
+                          <th scope="col">${user.getMail()}</th>
+                          <th scope="col">${user.getPassword()}</th>
+                          <th scope="col">${user.isAdminString()}</th>
+                          <th scope="col"><a href="#" data-selected="edit ${user.getId()}" class="btn btn-outline-warning waves-effect Mybtn-warning-hover-effect"><i class="fas fa-edit"></i></a></th>
+                          <th scope="col"><a href="/deleteUser" data-selected="delete ${user.getId()}" class="btn btn-outline-danger waves-effect Mybtn-danger-hover-effect"><i class="fas fa-trash-alt"></i></a></th>
                         </tr>
                         </#list>
                       </tbody>
@@ -118,48 +117,10 @@
 <!-- /.main-->
 
 <!-- Footer -->
-<footer class="page-footer font-small cyan darken-3">
-  <!-- Footer Elements -->
-  <div class="container">
-    <!-- Grid row-->
-    <div class="row">
-      <!-- Grid column -->
-      <div class="col-md-12 py-5">
-        <div class="mb-5 flex-center">
-          <!-- Facebook -->
-          <a class="fb-ic">
-            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <!-- Twitter -->
-          <a class="tw-ic">
-            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <!-- Google +-->
-          <a class="gplus-ic">
-            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <!--Linkedin -->
-          <a class="li-ic">
-            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <!--Instagram-->
-          <a class="ins-ic">
-            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <!--Pinterest-->
-          <a class="pin-ic">
-            <i class="fab fa-github fa-lg white-text fa-2x"> </i>
-          </a>
-        </div>
-      </div>
-      <!-- Grid column -->
-    </div>
-    <!-- Grid row-->
-  </div>
-  <!-- Footer Elements -->
+<footer class="page-footer font-small primary-color">
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="/home">RockPaperSizerGame.com</a>
+    <a href="/admin">RockPaperSizerGame.com</a>
   </div>
   <!-- Copyright -->
 </footer>
@@ -178,7 +139,8 @@
 <!-- Angular -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 <!-- Your custom js -->
-<script src="/js/StatisticsSearch.js"></script>
+<script src="/js/AdminPanelUsersSearch.js"></script>
+<script src="/js/DeleteUser.js"></script>
 </body>
 
 </html>

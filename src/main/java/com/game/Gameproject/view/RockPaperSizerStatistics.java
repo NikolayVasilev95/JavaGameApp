@@ -17,7 +17,7 @@ public class RockPaperSizerStatistics {
     @Autowired
     GameStatisticsService gameStatisticsService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/statistics")
+    @RequestMapping(method = RequestMethod.GET, value = "/RockPaperSizerStatistics")
     public String rockPaperSizerStatistics(HttpSession httpSession, Model model) {
         if (Objects.isNull(httpSession.getAttribute("loggedUser"))){
             return "redirect:/";

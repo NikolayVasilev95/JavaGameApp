@@ -48,7 +48,7 @@ public class Login {
         Optional<User> found = userService.findUserByMailAndPassword(user.getMail(), user.getPassword());
         if (found.isPresent()){
             httpSession.setAttribute("loggedUser", found.get());
-            return "redirect:/home";
+            return found.get().isAdmin() ? "redirect:/admin" : "redirect:/home";
         }else{
             setError("Wrong email or password!");
             return "redirect:/login";

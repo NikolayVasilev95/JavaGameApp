@@ -9,4 +9,5 @@ import java.util.Optional;
 @Repository
 public interface GameStatisticsRepository extends JpaRepository<GameStatistics, Long> {
     Optional<GameStatistics> findByUserId(Long userId);
+    void deleteByUserId(Long userId);
 }

@@ -66,3 +66,11 @@
   border: none !important;
   padding: 0 !important;
 }
+.Mybtn-warning-hover-effect:hover{
+  background-color: #fb3!important;
+  color: white !important;
+}
+.Mybtn-danger-hover-effect:hover{
+  background-color: #ff3547!important;
+  color: white !important;
+}

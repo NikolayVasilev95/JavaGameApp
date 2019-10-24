@@ -14,4 +14,6 @@ public interface UserService {
     List<User> findAllUsers();
 
     boolean existsByMail(String email);
+
+    void deleteById(long id);
 }

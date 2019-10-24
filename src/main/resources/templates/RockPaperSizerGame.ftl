@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Rock | Paper | Sizer</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -29,11 +29,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+               <a class="nav-link" href="/home">Home</a>
+            </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/home">Home
-                    <span class="sr-only">(current)</span>
-                </a>
-             </li>
+               <a class="nav-link" href="/RockPaperSizerGame">RockPaperSizerGame
+                 <span class="sr-only">(current)</span>
+               </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/RockPaperSizerStatistics">Statistics</a>
+            </li>
         </ul>
         <!-- Links -->
         <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -65,36 +71,42 @@
 <!-- main -->
 <main class="container" style="height: 70.9vh;">
     <div class="row pt-3 justify-content-center">
-      <h1>Game collections</h1>
+      <h1>Let's play the game!</h1>
     </div>
     <div class="row">
-      <div class="col-md-4">
-        <!-- Card image -->
-        <div class="view overlay">
-            <img class="img-fluid" src="/img/Rock paper sizer.png" alt="RockPaperSizerGame">
-            <a href="/RockPaperSizerGame">
-              <div class="mask rgba-white-slight"></div>
-            </a>
+      <div class="col-md-8">
+        <div class="row justify-content-center">
+          <h3 class="mb-0">Choose one</h3>
         </div>
-      </div>
-      <div class="col-md-4">
-        <!-- Card image -->
-        <div class="view overlay">
-            <img class="img-fluid" src="/img/mysteryCard.png" alt="mysteryCard">
-            <a href="#">
-              <div class="mask rgba-white-slight"></div>
-            </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-          <!-- Card image -->
-          <div class="view overlay">
-              <img class="img-fluid" src="/img/mysteryCard.png" alt="mysteryCard">
-              <a href="#">
-                <div class="mask rgba-white-slight"></div>
-              </a>
+        <div class="row">
+          <div class="col-md-4">
+            <button type="button" class="btn MyButtonRockPaperSizer" data-selected="rock">
+                <img class="img-fluid" src="/img/Rock.png" alt="Rock">
+            </button>
           </div>
+          <div class="col-md-4">
+            <button type="button" class="btn MyButtonRockPaperSizer" data-selected="paper">
+                <img class="img-fluid" src="/img/Paper.png" alt="Paper">
+            </button>
+          </div>
+          <div class="col-md-4">
+            <button type="button" class="btn MyButtonRockPaperSizer" data-selected="sizer">
+                <img class="img-fluid" src="/img/Sizer.png" alt="Sizer">
+            </button>
+          </div>
+        </div>
       </div>
+      <div class="col-md-4">
+        <div class="row justify-content-center">
+          <h3 class="mb-0">PC choice</h3>
+        </div>
+        <div class="row">
+          <img id="pcChoice" class="img-fluid" src="/img/mysteryCard.png" alt="Mystery card" style="max-width: 250px!important;">
+        </div>
+      </div>
+    </div>
+    <div class="row pt-5 justify-content-center">
+      <h3 id="result"></h3>
     </div>
 </main>
 <!-- /.main-->
@@ -160,6 +172,6 @@
 <!-- Angular -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 <!-- Your custom js -->
-<script src="/js/s.js"></script>
+<script src="/js/rockPaperSizer.js"></script>
 </body>
 </html>

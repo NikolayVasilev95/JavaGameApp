@@ -5,7 +5,7 @@
     userChoose = $(this).attr('data-selected');
     $.ajax({
         method: 'GET',
-        url: '/home',
+        url: '/RockPaperSizerGame',
         data: {
             userChoice: userChoose
         },

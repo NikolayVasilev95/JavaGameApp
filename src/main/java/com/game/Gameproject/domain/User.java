@@ -28,6 +28,9 @@ public class User {
     @NotBlank
     private String password;
 
+    @Column(nullable = false, columnDefinition = "boolean default false")
+    private boolean isAdmin = false;
+
     public Long getId() {
         return id;
     }
@@ -58,5 +61,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Boolean isAdmin(){
+        return isAdmin;
+    }
+
+    public String isAdminString(){
+        return isAdmin().toString();
     }
 }

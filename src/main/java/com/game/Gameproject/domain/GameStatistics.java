@@ -1,7 +1,5 @@
 package com.game.Gameproject.domain;
 
-import com.game.Gameproject.domain.User;
-
 import javax.persistence.*;
 
 @Entity
@@ -13,7 +11,7 @@ public class GameStatistics {
     @Id
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 

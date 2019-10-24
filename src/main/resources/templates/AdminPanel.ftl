@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>JavaGameApp | Home</title>
+  <title>Admin Pane</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -20,8 +20,8 @@
 
 <!-- Start your project here-->
 <!--Navbar -->
-<nav class="mb-0 navbar navbar-expand-lg navbar-dark default-color">
-  <a class="navbar-brand" href="/">JavaGameApp</a>
+<nav class="mb-0 navbar navbar-expand-lg navbar-dark primary-color">
+  <a class="navbar-brand" href="/admin">Admin Panel</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
           aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -30,12 +30,12 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Home
+        <a class="nav-link" href="/admin">Home
           <span class="sr-only">(current)</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/about">About</a>
+        <a class="nav-link" href="/AdminPanelUsers">Users</a>
       </li>
     </ul>
     <!-- Links -->
@@ -57,8 +57,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-default"
              aria-labelledby="navbarDropdownMenuLink-333">
-          <a class="dropdown-item" href="/login">Log in</a>
-          <a class="dropdown-item" href="/register">Sign up</a>
+          <a class="dropdown-item" href="/logout">Logout</a>
         </div>
       </li>
     </ul>
@@ -67,15 +66,11 @@
 <!--/.Navbar -->
 
 <!-- main -->
-<div class="container-fluid MyBackgroundImage" style="height: 71.3vh;">
+<div class="container-fluid" style="height: 71.3vh;">
   <div class="row h-100">
     <div class="col-md-12 h-100">
       <h1 class="MyTextInCenter">
-        <span class="MyAnimation">Rock</span>
-        <span class="MyAnimation">|</span>
-        <span class="MyAnimation">Paper</span>
-        <span class="MyAnimation">|</span>
-        <span class="MyAnimation">Sizer</span>
+        ADMIN
       </h1>
     </div>
   </div>
@@ -83,48 +78,10 @@
 <!-- /.main-->
 
 <!-- Footer -->
-<footer class="page-footer font-small cyan darken-3">
-  <!-- Footer Elements -->
-  <div class="container">
-    <!-- Grid row-->
-    <div class="row">
-      <!-- Grid column -->
-      <div class="col-md-12 py-5">
-        <div class="mb-5 flex-center">
-          <!-- Facebook -->
-          <a class="fb-ic">
-            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <!-- Twitter -->
-          <a class="tw-ic">
-            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <!-- Google +-->
-          <a class="gplus-ic">
-            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <!--Linkedin -->
-          <a class="li-ic">
-            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <!--Instagram-->
-          <a class="ins-ic">
-            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <!--Pinterest-->
-          <a class="pin-ic">
-            <i class="fab fa-github fa-lg white-text fa-2x"> </i>
-          </a>
-        </div>
-      </div>
-      <!-- Grid column -->
-    </div>
-    <!-- Grid row-->
-  </div>
-  <!-- Footer Elements -->
+<footer class="page-footer font-small primary-color">
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="/">JavaGameApp.com</a>
+    <a href="/admin">RockPaperSizerGame.com</a>
   </div>
   <!-- Copyright -->
 </footer>
