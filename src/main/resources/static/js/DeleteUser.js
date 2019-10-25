@@ -21,22 +21,6 @@
                 console.log('error', error)
             }
         });
-    } else if(currBtnType == "edit"){
-        $.post({
-            url: "/editUser",
-            data: {
-                userForEdit: userForEdit
-            },
-            success: function(response) {
-                $().redirect('/editUser', {
-                    response
-                });
-                console.log('response', response)
-            },
-            error: function(error) {
-                console.log('error', error)
-            }
-        });
     }
   });
 })(jQuery);

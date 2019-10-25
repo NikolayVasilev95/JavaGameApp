@@ -13,6 +13,8 @@ public interface UserService {
 
     List<User> findAllUsers();
 
+    Optional<User> updateUser(User userForEdit);
+
     boolean existsByMail(String email);
 
     void deleteById(long id);

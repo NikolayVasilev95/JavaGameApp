@@ -14,6 +14,17 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles  -->
   <link rel="stylesheet" href="/css/main.css">
+  <style media="screen">
+    tr td .edit-mode {
+      display: none;
+    }
+    tr.editing td .edit-mode {
+      display: block;
+    }
+    tr.editing td .view {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -98,13 +109,28 @@
                       <tbody id="myTable">
                         <#list allUsers as user>
                         <tr>
-                          <th scope="row">${user.getId()}</th>
-                          <th scope="col">${user.getName()}</th>
-                          <th scope="col">${user.getMail()}</th>
-                          <th scope="col">${user.getPassword()}</th>
-                          <th scope="col">${user.isAdminString()}</th>
-                          <th scope="col"><a href="#" data-selected="edit ${user.getId()}" class="btn btn-outline-warning waves-effect Mybtn-warning-hover-effect"><i class="fas fa-edit"></i></a></th>
-                          <th scope="col"><a href="/deleteUser" data-selected="delete ${user.getId()}" class="btn btn-outline-danger waves-effect Mybtn-danger-hover-effect"><i class="fas fa-trash-alt"></i></a></th>
+                          <td scope="row">${user.getId()}</td>
+                          <td scope="col">
+                            <span class="view">${user.getName()}</span>
+                            <input id="name${user.getId()}" class="edit-mode form-control" type="text" value="${user.getName()}">
+                          </td>
+                          <td scope="col">
+                            <span class="view">${user.getMail()}</span>
+                            <input id="mail${user.getId()}" class="edit-mode form-control" type="text" value="${user.getMail()}">
+                          </td>
+                          <td scope="col">
+                            <span class="view">${user.getPassword()}</span>
+                            <input id="password${user.getId()}" class="edit-mode form-control" type="text" value="${user.getPassword()}">
+                          </td>
+                          <td scope="col">
+                            <span class="view">${user.isAdminString()}</span>
+                            <input id="isAdmin${user.getId()}" class="edit-mode form-control" type="text" value="${user.isAdminString()}">
+                          </td>
+                          <td scope="col"><a toggle-edit class="view btn btn-outline-warning waves-effect Mybtn-warning-hover-effect"><i class="fas fa-edit"></i></a></td>
+                          <td scope="col">
+                            <a href="/deleteUser" data-selected="delete ${user.getId()}" class="view btn btn-outline-danger waves-effect Mybtn-danger-hover-effect"><i class="fas fa-trash-alt"></i></a>
+                            <a href="/editUser" data-selected="edit ${user.getId()}" class="edit-mode btn btn-outline-primary waves-effect Mybtn-primary-hover-effect"><i class="fas fa-save"></i></a>
+                          </td>
                         </tr>
                         </#list>
                       </tbody>
@@ -139,8 +165,9 @@
 <!-- Angular -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 <!-- Your custom js -->
-<script src="/js/AdminPanelUsersSearch.js"></script>
+<script src="/js/EditUser.js"></script>
 <script src="/js/DeleteUser.js"></script>
+<script src="/js/AdminPanelUsersSearch.js"></script>
 </body>
 
 </html>

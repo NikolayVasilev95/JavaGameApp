@@ -71,7 +71,7 @@
       <div class="col-md-4">
         <!-- Card image -->
         <div class="view overlay">
-            <img class="img-fluid" src="/img/Rock paper sizer.png" alt="RockPaperSizerGame">
+            <img class="img-fluid" src="/img/Rock-Paper-Sizer.jpg" alt="RockPaperSizerGame">
             <a href="/RockPaperSizerGame">
               <div class="mask rgba-white-slight"></div>
             </a>

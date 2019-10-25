@@ -63,6 +63,10 @@ public class User {
         this.password = password;
     }
 
+    public void setIsAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
     public Boolean isAdmin(){
         return isAdmin;
     }

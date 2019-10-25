@@ -66,7 +66,7 @@
 <!--/.Navbar -->
 
 <!-- main -->
-<div class="container-fluid" style="height: 71.3vh;">
+<div class="container-fluid" style="height: 88.8vh;">
   <div class="row h-100">
     <div class="col-md-12 h-100">
       <h1 class="MyTextInCenter">

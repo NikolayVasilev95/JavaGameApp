@@ -37,6 +37,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Optional<User> updateUser(User userForEdit) {
+        return (userRepository.existsById(userForEdit.getId()))
+                ? Optional.of(userRepository.save(userForEdit))
+                : Optional.empty();
+    }
+
+    @Override
     public boolean existsByMail(String email) {
         return userRepository.existsByMail(email);
     }
